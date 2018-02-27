@@ -60,9 +60,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: './src/index.html',
-            template: 'index.html',
-            title: '商城'
+            filename: 'index.html',
+            template: './src/index.html',
+            title: '阿卢的商城'
         })
     ]
 }
