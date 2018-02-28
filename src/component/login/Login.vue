@@ -38,6 +38,7 @@
                if(res.data.status==0){
                    this.$alert("登录成功了哟~~","TIP",{
                        callback:()=>{
+                           localStorage.setItem('uname',res.data.message.uname)
                            this.$router.push({name:'admin'})
                        }
                    })
