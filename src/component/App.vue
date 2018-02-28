@@ -1,8 +1,6 @@
 <template>
-<div>
-    <div>首页</div>
- <router-view></router-view>
-</div>
+
+    <router-view></router-view>
 </template>
 <script>
 export default{
