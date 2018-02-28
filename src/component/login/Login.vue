@@ -2,8 +2,8 @@
     <div class="login">
         <section>
             <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-                <el-form-item label="密码" prop="uname">
-                    <el-input type="password" v-model="ruleForm2.uname" auto-complete="off"></el-input>
+                <el-form-item label="用户名" prop="uname">
+                    <el-input type="text" v-model="ruleForm2.uname" auto-complete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="确认密码" prop="upwd">
                     <el-input type="password" v-model="ruleForm2.upwd" auto-complete="off"></el-input>
@@ -36,9 +36,14 @@
         login(){
            this.$http.post(this.$api.login,this.ruleForm2).then((res)=>{
                if(res.data.status==0){
-                   this.$alert("成功了哟!!")
+                   this.$alert("登录成功了哟~~","TIP",{
+                       callback:()=>{
+                           this.$router.push({name:'admin'})
+                       }
+                   })
+
                }else{
-                   this.$alert("error")
+                   this.$alert("呀！登录失败惹！")
                }
            })
         },
