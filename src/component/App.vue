@@ -1,13 +1,14 @@
 <template>
    <div>
 {{msg}}
+ <router-view></router-view>
    </div>
 </template>
 <script>
 export default{
     data(){
         return{
-            msg:'hello'
+            msg:'hello 0.0'
         }
     }
 }
