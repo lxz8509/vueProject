@@ -47,7 +47,7 @@ export default {
   height: 100%;
 }
 .el-main {
-  background-color: pink;
+  background-color: rgb(230, 247, 209);
 }
 .el-container {
   height: 100%;

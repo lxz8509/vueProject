@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import vueRouter from './router/index.js'
+import vueRouter from './router/index.js'//导入路由配置
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './component/App.vue'
