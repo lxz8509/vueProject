@@ -12,6 +12,7 @@ export default new VueRouter({
         {name:'login',path:'/login',component:Login},
         {name:'admin',path:'/admin',component:Admin,
     children:[...shopcart]
-    }
+    },
+{name:'aaa',path:"*",redirect:'/login'}
     ]
 })

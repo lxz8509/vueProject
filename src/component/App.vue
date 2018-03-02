@@ -8,6 +8,6 @@ export default{
 </script>
 <style>
 div{
-    color:rgb(228, 247, 215)
+    color:yellowgreen
 }
 </style>

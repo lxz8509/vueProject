@@ -22,8 +22,8 @@
     data() {
       return {
         ruleForm2: {
-          uname: '',
-          upwd: ''
+          uname: "admin",
+          upwd: '123456'
         },
         rules2: {
           uname:[{required:true,message:'不能为空哦~~',trigger:'blur'}] ,
