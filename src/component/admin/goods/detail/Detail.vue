@@ -1,6 +1,6 @@
 <template>
     <div>
-        购物车
+        细节详情
     </div>
 </template>
 
