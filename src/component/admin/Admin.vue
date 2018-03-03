@@ -8,7 +8,7 @@
             </el-aside>
             <el-container>
                 <!-- 头部 -->
-                <el-header style="height:180px">
+                <el-header style="height:120px">
                     <app-header></app-header>
                 </el-header>
 
