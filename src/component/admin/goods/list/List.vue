@@ -10,7 +10,7 @@
         <el-button type="success" plain size="mini" icon="el-icon-check">全选</el-button>
         <el-button type="danger" plain size="mini" icon="el-icon-delete">删除</el-button>
         <!-- 搜索框 -->
-        <el-input placeholder="请输入内容" prefix-icon="el-icon-search"></el-input>
+        <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="seachValue.searchvalue" @blur="change"></el-input>
         <el-table ref="multipleTable" :data="tableData3" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
             <el-table-column type="selection" width="55"></el-table-column>
             <!-- 表格 -->
@@ -37,32 +37,29 @@ export default {
   data() {
     return {
       tableData3: [
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        }
+        
+        
       ],
+      seachValue:{
+          pageIndex:1,
+          pageSize:10,
+          searchvalue:''
+      },
+      
       multipleSelection: []
     };
   },
   methods: {
+      change(){
+          this.getData()
+      },
     getData() {
-      this.$http.get(this.$api.gsList + "?pageIndex=1&pageSize=10")
+        let getGoods = `${this.$api.gsList}?pageIndex=${this.seachValue.pageIndex}&pageSize=${this.seachValue.pageSize}&searchvalue=${this.seachValue.searchvalue}`
+      this.$http.get(getGoods)
         .then(res => {
-            console.log(res.data.status)
+            // console.log(res.data.status)
           if (res.data.status == 0) {
-              console.log(res.data.message)
+            //   console.log(res.data.message)
             this.tableData3 = res.data.message;
           }
         });
@@ -88,6 +85,7 @@ export default {
 </script>
 
 <style scoped lang="less">
+
 .el-button {
   margin-top: 20px;
 }
